@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Cultural Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page_faq">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Cultural Center</a>
+            <button onclick="toggleTheme()">Switch Theme</button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="support.html">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" id="dateTimeDisplay"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header_faq">
+        <h1>Frequently Asked Questions (FAQ)</h1>
+    </header>
+
+    <div class="sectiont">
+        <div class="sectiont">
+            <h2>
+                <span class="toggle-icon">↓</span>
+                What is the purpose of the Cultural Center?
+            </h2>
+            <p class="faq-answer">The Cultural Center aims to bring people closer to the diverse cultures around the world through interactive content, educational programs, and virtual tours.</p>
+        </div>
+
+        <div class="sectiont">
+            <h2>
+                <span class="toggle-icon">↓</span>
+                How can I participate in events?
+            </h2>
+            <p class="faq-answer">To participate in events, you can check our event calendar and register online. Some events may have limited seating, so early registration is recommended.</p>
+        </div>
+
+        <div class="sectiont">
+            <h2>
+                <span class="toggle-icon">↓</span>
+                Can I volunteer at the Cultural Center?
+            </h2>
+            <p class="faq-answer">Absolutely! We welcome volunteers who are passionate about culture and arts. Visit our Follow Us section to contact us.</p>
+        </div>
+
+        <div class="text-center mt-4">
+            <a class="btn btn-primary w-25" href="index.html">Back to Home</a>
+        </div>
+    </div>
+
+    <footer class="text-center mt-5 py-3">
+        <p>© 2024 It-2302 Cultural Center: World Cultures and Traditions</p>
+        <h7>Made by Yuriy Mikhnevich,</h7>
+        <h7>Ernur Baimukhambetov,</h7>
+        <h7>Adam Satyshev</h7>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<script>
+    //theme check
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+            updateThemeElements(savedTheme === 'dark');
+        }
+    });
+</script>
+</html>

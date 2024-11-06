@@ -258,7 +258,7 @@ function validateLogin() {
     if (storedUser && storedUser.password === password) {
         localStorage.setItem("loggedInUser", email);
         alert("Login successful!");
-        window.location.href = "home.html.html";
+        window.location.href = "index.html";
         return false;
     } else {
         alert("Invalid email or password.");

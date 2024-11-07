@@ -98,70 +98,57 @@
 </body>
 
 <script>
-
-//background
-    if (document.body.classList.contains('page_about')) {
-        function changeBackgroundColor(color) {
-            document.body.style.background = color;
-        }
-
-        function resetBackground() {
-            document.body.style.background = 'linear-gradient(135deg, #a2c2e2, #d0a2e2)';
-        }
-    }
-
-//change font
     function changeFont(sectionId) {
         const section = document.getElementById(sectionId);
         const currentFont = section.style.fontFamily;
-
+    
         if (currentFont === 'Georgia, serif') {
             section.style.fontFamily = 'Arial, sans-serif';
         } else {
             section.style.fontFamily = 'Georgia, serif';
         }
     }
-
-//change size
+    
     function changeSize(sectionId) {
         const section = document.getElementById(sectionId);
         const currentSize = section.style.fontSize;
-
+    
         if (currentSize === '20px') {
             section.style.fontSize = '16px';
         } else {
             section.style.fontSize = '20px'; 
         }
     }
-
+    
     document.querySelectorAll('p').forEach(p => {
         p.style.fontSize = '16px';
     });
-
+    
+    // Adding event listeners for each section's buttons
     document.getElementById("changeFontIdea").addEventListener("click", function () {
-    changeFont("idea-section");
-});
-
-document.getElementById("changeSizeIdea").addEventListener("click", function () {
-    changeSize("idea-section");
-});
-
-document.getElementById("changeFontDevelop").addEventListener("click", function () {
-    changeFont("develop-section");
-});
-
-document.getElementById("changeSizeDevelop").addEventListener("click", function () {
-    changeSize("develop-section");
-});
-
-document.getElementById("changeFontFuture").addEventListener("click", function () {
-    changeFont("future-section");
-});
-
-document.getElementById("changeSizeFuture").addEventListener("click", function () {
-    changeSize("future-section");
-});
-
+        changeFont("idea-section");
+    });
+    
+    document.getElementById("changeSizeIdea").addEventListener("click", function () {
+        changeSize("idea-section");
+    });
+    
+    document.getElementById("changeFontDevelop").addEventListener("click", function () {
+        changeFont("develop-section");
+    });
+    
+    document.getElementById("changeSizeDevelop").addEventListener("click", function () {
+        changeSize("develop-section");
+    });
+    
+    document.getElementById("changeFontFuture").addEventListener("click", function () {
+        changeFont("future-section");
+    });
+    
+    document.getElementById("changeSizeFuture").addEventListener("click", function () {
+        changeSize("future-section");
+    });
+    // Проверка сохранённой темы при загрузке страницы
     document.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {

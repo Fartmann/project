@@ -138,6 +138,30 @@
         p.style.fontSize = '16px';
     });
 
+    document.getElementById("changeFontIdea").addEventListener("click", function () {
+    changeFont("idea-section");
+});
+
+document.getElementById("changeSizeIdea").addEventListener("click", function () {
+    changeSize("idea-section");
+});
+
+document.getElementById("changeFontDevelop").addEventListener("click", function () {
+    changeFont("develop-section");
+});
+
+document.getElementById("changeSizeDevelop").addEventListener("click", function () {
+    changeSize("develop-section");
+});
+
+document.getElementById("changeFontFuture").addEventListener("click", function () {
+    changeFont("future-section");
+});
+
+document.getElementById("changeSizeFuture").addEventListener("click", function () {
+    changeSize("future-section");
+});
+
     document.addEventListener('DOMContentLoaded', () => {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {

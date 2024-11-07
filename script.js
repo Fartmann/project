@@ -301,13 +301,19 @@ function toggleTheme() {
 // update theme elements
 function updateThemeElements(isDark) {
     const textColor = isDark ? '#fff' : '#333';
-    const bgColor = isDark ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.9)';
+    const bgColor = isDark ? 'rgba(30, 30, 35, 1)' : 'rgba(255, 255, 255, 0.9)';
+    const bordColor = isDark ? '2px solid #999' : '2px solid #000';
+    const bgrColor = isDark
+        ? 'linear-gradient(135deg, #4b0082, #2e2e2e)' // градиент от фиолетового к темно-серому
+        : 'linear-gradient(135deg, #a2c2e2, #d0a2e2)'; // градиент для светлой темы
     const navbarColor = isDark ? 'navbar-dark bg-dark' : 'navbar-light bg-light';
 
     document.querySelectorAll('header, section, footer, .sectiont').forEach((element) => {
         element.style.color = textColor;
         element.style.backgroundColor = bgColor;
+        element.style.border = bordColor; // исправлено с "bordcolor" на "bordColor"
     });
+    document.body.style.background = bgrColor;
 
     const navbar = document.querySelector('.navbar');
     if (navbar) {

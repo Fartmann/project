@@ -311,7 +311,7 @@ function updateThemeElements(isDark) {
     document.querySelectorAll('header, section, footer, .sectiont').forEach((element) => {
         element.style.color = textColor;
         element.style.backgroundColor = bgColor;
-        element.style.border = bordColor; // исправлено с "bordcolor" на "bordColor"
+        element.style.border = bordColor;
     });
     document.body.style.background = bgrColor;
 

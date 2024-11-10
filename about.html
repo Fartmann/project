@@ -82,7 +82,6 @@
         <button class="btn btn-secondary" onclick="changeBackgroundColor('#0000ff')">Blue</button>
         <button class="btn btn-secondary" onclick="changeBackgroundColor('#ff1493')">Pink</button>
         <button class="btn btn-secondary" onclick="changeBackgroundColor('#ffff00')">Yellow</button>
-        <button class="btn btn-secondary" onclick="resetBackground()">Reset to Gradient</button>
     </div>
     </div>
 
@@ -97,6 +96,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 <script>
+
+    if (document.body.classList.contains('page_about')) {
+    function changeBackgroundColor(color) {
+        document.body.style.background = color;
+    }
+
+    function resetBackground() {
+        document.body.style.background = 'linear-gradient(135deg, #a2c2e2, #d0a2e2)';
+        }
+    }
+
     function changeFont(sectionId) {
         const section = document.getElementById(sectionId);
         const currentFont = section.style.fontFamily;

@@ -77,6 +77,20 @@
             alert("You have been logged out.");
             window.location.href = "login.html";
         }
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+                updateThemeElements(savedTheme === 'dark');
+            }
+        });
+    
+        // Функция для переключения темы
+        function toggleTheme() {
+            const isDark = document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            updateThemeElements(isDark);
+        }
 
 
     </script>

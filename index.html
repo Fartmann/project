@@ -9,7 +9,7 @@
 </head>
 
 <body class="page_home">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">Cultural Center</a>
             <button onclick="toggleTheme()">Switch Theme</button>
@@ -19,10 +19,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home.html.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Profile</a>
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -31,7 +28,7 @@
                         <a class="nav-link" href="support.html">Support</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" onclick="logoutUser()" href="login.html">Logout</a>
+                        <a class="nav-link" id="profile-link" href="profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
                         <span class="nav-link" id="dateTimeDisplay"></span>
@@ -140,5 +137,20 @@
             navbar.className = `navbar navbar-expand-lg ${navbarColor} w-100`;
         }
     }
+    document.addEventListener('DOMContentLoaded', () => {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        const profileLink = document.getElementById("profile-link");
+
+        if (loggedInUser) {
+            const storedUserData = JSON.parse(localStorage.getItem(loggedInUser));
+            if (storedUserData && storedUserData.name) {
+                // Изменяем текст ссылки на имя пользователя
+                profileLink.textContent = storedUserData.name;
+            }
+        } else {
+            // Если пользователь не залогинен, оставляем текст "Профиль"
+            profileLink.textContent = "Profile";
+        }
+    });
 </script>
 </html>

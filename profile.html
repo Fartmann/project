@@ -91,6 +91,14 @@
             alert("You have been logged out.");
             window.location.href = "login.html";
         }
+        // Проверка сохранённой темы при загрузке страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.body.classList.toggle('dark-theme', savedTheme === 'dark');
+                updateThemeElements(savedTheme === 'dark');
+            }
+        });
 
 
     </script>

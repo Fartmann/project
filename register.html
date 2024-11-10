@@ -11,13 +11,28 @@
 <body class="page_reg">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100">
         <div class="container-fluid">
-            <a class="navbar-brand">Cultural Center</a>
+            <a class="navbar-brand" href="index.html">Cultural Center</a>
             <button onclick="toggleTheme()">Switch Theme</button>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="support.html">Support</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" id="dateTimeDisplay"></span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -27,7 +42,7 @@
         <h1>Registration</h1>
     </header>
 
-    <div class="sectiont">
+    <div class="sectiont w-50">
         <form id="registerForm" class="mt-4" onsubmit="return registerUser(event)">
             <div class="mb-3">
                 <label for="name" class="form-label">Full Name</label>
@@ -55,7 +70,9 @@
 
     <footer class="text-center mt-5 py-3">
         <p>© 2024 It-2302 Cultural Center: World Cultures and Traditions</p>
-        <h7>Made by Yuriy Mikhnevich, Ernur Baimukhambetov, Adam Satyshev</h7>
+        <h7>Made by Yuriy Mikhnevich,</h7>
+        <h7>Ernur Baimukhambetov,</h7>
+        <h7>Adam Satyshev</h7>
     </footer>
 
     <script src="script.js" defer></script>
@@ -68,6 +85,21 @@
         if (savedTheme) {
             document.body.classList.toggle('dark-theme', savedTheme === 'dark');
             updateThemeElements(savedTheme === 'dark');
+        }
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+        const loggedInUser = localStorage.getItem("loggedInUser");
+        const profileLink = document.getElementById("profile-link");
+
+        if (loggedInUser) {
+            const storedUserData = JSON.parse(localStorage.getItem(loggedInUser));
+            if (storedUserData && storedUserData.name) {
+                // Изменяем текст ссылки на имя пользователя
+                profileLink.textContent = storedUserData.name;
+            }
+        } else {
+            // Если пользователь не залогинен, оставляем текст "Профиль"
+            profileLink.textContent = "Profile";
         }
     });
 </script>

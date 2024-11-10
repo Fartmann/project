@@ -19,16 +19,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="support.html">Support</a>
+                        <a class="nav-link active" href="profile.html">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="profile-link" href="profile.html">Profile</a>
+                        <a class="nav-link" href="login.html" onclick="logoutUser()">Logout</a>
                     </li>
                     <li class="nav-item">
                         <span class="nav-link" id="dateTimeDisplay"></span>
@@ -38,19 +38,32 @@
         </div>
     </nav>
 
-    <div class="sectiont mt-5 text-center">
-        <h1>User Profile</h1>
-        <div id="user-info" class="sectiont">
-            <p><strong>Name:</strong> <span id="user-name"></span></p>
-            <p><strong>Email:</strong> <span id="user-email"></span></p>
-            <p><strong>Location:</strong> <span id="user-location"></span></p>
-            <button class="btn btn-secondary" onclick="logoutUser()">Logout</button>
+    <div class="sectiont mt-5" style="width: 1000px;">
+        <h1 class="text-center mb-4">User Profile</h1>
+        <div class="row align-items-center">
+            <!-- Секция с картинкой профиля -->
+            <div class="col-md-5 text-center">
+                <img src="profile-picture.jpg" alt="Profile Picture" style="max-width: 200px;">
+            </div>
+            <!-- Секция с информацией о пользователе -->
+            <div class="col-md-4">
+                <div class="user-info text-start">
+                    <p><strong>Name:</strong> <span id="user-name"></span></p>
+                    <p><strong>Email:</strong> <span id="user-email"></span></p>
+                    <p><strong>Location:</strong> <span id="user-location"></span></p>
+                    <button class="btn btn-secondary mt-3" onclick="logoutUser()">Logout</button>
+                </div>
+            </div>
         </div>
     </div>
 
     <footer class="text-center mt-5 py-3 fixed-bottom">
         <p>© 2024 It-2302 Cultural Center: World Cultures and Traditions</p>
+        <h7>Made by Yuriy Mikhnevich,</h7>
+        <h7>Ernur Baimukhambetov,</h7>
+        <h7>Adam Satyshev</h7>
     </footer>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -82,7 +95,7 @@
                 }
             } else {
                 // Если пользователь не залогинен, оставляем текст "Профиль"
-                profileLink.textContent = "Профиль";
+                profileLink.textContent = "Profile";
             }
         });
 

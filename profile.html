@@ -42,8 +42,10 @@
         <h1 class="h1_about"></h1>
     </header>
 
-    <div class="container mt-4">
-        
+    <div class="container mt-5">
+        <h1>Welcome, <span id="userName"></span>!</h1>
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        <p><strong>Location:</strong> <span id="userLocation"></span></p>
     </div>
 
     <footer class="text-center mt-5 py-3 fixed-bottom">
@@ -65,5 +67,22 @@
             updateThemeElements(savedTheme === 'dark');
         }
     });
+
+    document.addEventListener('DOMContentLoaded', () => {
+    const loggedInUserEmail = localStorage.getItem('loggedInUser');
+    
+    if (loggedInUserEmail) {
+        const userData = JSON.parse(localStorage.getItem(loggedInUserEmail));
+        
+        // Display user information
+        document.getElementById('userName').textContent = userData.name;
+        document.getElementById('userEmail').textContent = userData.email;
+        document.getElementById('userLocation').textContent = userData.location;
+    } else {
+        alert("You are not logged in!");
+        window.location.href = 'login.html';
+    }
+});
+
 </script>
 </html>

@@ -82,7 +82,6 @@
         <button class="btn btn-secondary" onclick="changeBackgroundColor('#0000ff')">Blue</button>
         <button class="btn btn-secondary" onclick="changeBackgroundColor('#ff1493')">Pink</button>
         <button class="btn btn-secondary" onclick="changeBackgroundColor('#ffff00')">Yellow</button>
-        <button class="btn btn-secondary" onclick="resetBackground()">Reset to Gradient</button>
     </div>
 
     <footer class="text-center mt-5 py-3">
@@ -101,11 +100,6 @@
         function changeBackgroundColor(color) {
             document.body.style.background = color;
         }
-
-        function resetBackground() {
-            document.body.style.background = 'linear-gradient(135deg, #a2c2e2, #d0a2e2)';
-        }
-    }
     
     function changeFont(sectionId) {
         const section = document.getElementById(sectionId);

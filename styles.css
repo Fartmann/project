@@ -23,7 +23,7 @@
 /* Стили для контейнера с текстом */
 header, section {
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 20px;
+    padding: 15px;
     border-radius: 15px;
     border: 2px solid #000;
     text-align: center;
@@ -177,9 +177,9 @@ button:hover {
 .page_reg {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #a2c2e2, #d0a2e2);
-    align-items: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 0;
 }
@@ -261,11 +261,11 @@ button:hover {
 .page_about {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #a2c2e2, #d0a2e2);
-    align-items: center;
-    display: flex;
-    flex-direction: column;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header_about {
@@ -281,14 +281,12 @@ button:hover {
 
 .div_about {
     width: 80%;
-    margin: 0 auto;
+    max-width: 800px;
+    margin: 20px auto;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    align-items: center;
-    display: flex;
-    flex-direction: column;
 }
 
 .section_about {
@@ -314,6 +312,13 @@ button:hover {
     border-radius: 5px;
     text-decoration: none;
     cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
 }
 
 /*Стили для FAQ*/
@@ -752,4 +757,16 @@ footer {
         width: 90%;
         padding: 15px;
     }
+}
+
+.carousel {
+    width: 100%;
+    max-width: 100%;
+    margin: auto;
+    padding: 8px;
+}
+
+.carousel-inner img {
+    width: 100%;
+    height: auto;
 }

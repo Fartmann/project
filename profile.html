@@ -35,14 +35,14 @@
         </div>
     </nav>
 
-    <div class="sectiont mt-5" style="width: 1000px;">
+    <div class="sectiont mt-5" style="width: 100%;">
         <h1 class="text-center mb-4">User Profile</h1>
         <div class="row align-items-center">
-            <!-- Секция с картинкой профиля -->
+
             <div class="col-md-5 text-center">
                 <img src="profile-picture.jpg" alt="Profile Picture" style="max-width: 200px;">
             </div>
-            <!-- Секция с информацией о пользователе -->
+
             <div class="col-md-4">
                 <div class="user-info text-start">
                     <p><strong>Name:</strong> <span id="user-name"></span></p>
@@ -75,7 +75,6 @@
                 document.getElementById("user-name").textContent = storedUserData.name || "Unknown";
                 document.getElementById("user-location").textContent = storedUserData.location || "Unknown";
 
-                // Отображение имени пользователя в navbar
                 document.getElementById("navbar-username").textContent = storedUserData.name || "User";
             }
         });
@@ -87,11 +86,11 @@
             if (loggedInUser) {
                 const storedUserData = JSON.parse(localStorage.getItem(loggedInUser));
                 if (storedUserData && storedUserData.name) {
-                    // Изменяем текст ссылки на имя пользователя
+
                     profileLink.textContent = storedUserData.name;
                 }
             } else {
-                // Если пользователь не залогинен, оставляем текст "Профиль"
+
                 profileLink.textContent = "Profile";
             }
         });
@@ -101,7 +100,7 @@
             alert("You have been logged out.");
             window.location.href = "login.html";
         }
-        // Проверка сохранённой темы при загрузке страницы
+
         document.addEventListener('DOMContentLoaded', () => {
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
